@@ -1,50 +1,83 @@
 ---
-import HomeIcon from '../components/icons/Home.astro';
-import MapPinIcon from '../components/icons/MapPin.astro';
+import HomeIcon from "../components/icons/Home.astro";
+import MapPinIcon from "../components/icons/MapPin.astro";
+import Card from "./ui/Card.astro";
+import CardHeader from "./ui/CardHeader.astro";
+import CardTitle from "./ui/CardTitle.astro";
+import CardDescription from "./ui/CardDescription.astro";
+import CardContent from "./ui/CardContent.astro";
+import Button from "./ui/Button.astro";
+import Badge from "./ui/Badge.astro";
+
+const propiedades = [
+  {
+    title: "Casa Familiar en Centro",
+    price: "$180,000",
+    location: "Centro Histórico",
+    beds: 3,
+    baths: 2,
+    area: "150m²",
+  },
+  {
+    title: "Departamento Moderno",
+    price: "$95,000",
+    location: "Zona Norte",
+    beds: 2,
+    baths: 1,
+    area: "80m²",
+  },
+  {
+    title: "Casa con Jardín",
+    price: "$220,000",
+    location: "Barrio Residencial",
+    beds: 4,
+    baths: 3,
+    area: "200m²",
+  },
+];
 ---
+
 <section id="propiedades" class="py-16">
   <div class="container mx-auto px-4">
     <div class="text-center mb-12">
-  <h2 class="text-3xl md:text-4xl font-heading font-black text-foreground mb-4">Propiedades Destacadas</h2>
-  <p class="text-lg text-muted-foreground">Selección especial de nuestras mejores opciones</p>
+      <h2
+        class="text-3xl md:text-4xl font-heading font-black text-foreground mb-4"
+      >
+        Propiedades Destacadas
+      </h2>
+      <p class="text-lg text-muted-foreground">
+        Selección especial de nuestras mejores opciones
+      </p>
     </div>
+
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div class="overflow-hidden hover:shadow-lg transition-shadow rounded-xl bg-white border">
-        <div class="h-48 bg-muted/50 flex items-center justify-center"><HomeIcon class="h-12 w-12 text-muted-foreground" /></div>
-        <div class="p-6">
-          <div class="flex justify-between items-start mb-2">
-            <div class="font-heading text-lg">Casa Familiar en Centro</div>
-            <span class="inline-block px-2 py-1 rounded bg-secondary text-secondary-foreground text-xs font-semibold">$180,000</span>
+
+      {/*  DESDE ACA PARA ABAJO */}
+      {propiedades.map((property) => (
+        <Card className="overflow-hidden hover:shadow-lg transition-shadow rounded-xl bg-white border">
+          <div class="h-48 bg-muted/50 flex items-center justify-center">
+            <HomeIcon class="h-12 w-12 text-muted-foreground" />
           </div>
-          <div class="flex items-center text-muted-foreground text-sm mb-2"><MapPinIcon class="h-4 w-4 mr-1" />Centro Histórico</div>
-          <div class="flex justify-between text-sm text-muted-foreground mb-4"><span>3 hab.</span><span>2 baños</span><span>150m²</span></div>
-          <button class="w-full px-4 py-2 bg-primary text-white rounded font-semibold">Ver Detalles</button>
-        </div>
-      </div>
-      <div class="overflow-hidden hover:shadow-lg transition-shadow rounded-xl bg-white border">
-        <div class="h-48 bg-muted/50 flex items-center justify-center"><HomeIcon class="h-12 w-12 text-muted-foreground" /></div>
-        <div class="p-6">
-          <div class="flex justify-between items-start mb-2">
-            <div class="font-heading text-lg">Departamento Moderno</div>
-            <span class="inline-block px-2 py-1 rounded bg-secondary text-secondary-foreground text-xs font-semibold">$95,000</span>
-          </div>
-          <div class="flex items-center text-muted-foreground text-sm mb-2"><MapPinIcon class="h-4 w-4 mr-1" />Zona Norte</div>
-          <div class="flex justify-between text-sm text-muted-foreground mb-4"><span>2 hab.</span><span>1 baño</span><span>80m²</span></div>
-          <button class="w-full px-4 py-2 bg-primary text-white rounded font-semibold">Ver Detalles</button>
-        </div>
-      </div>
-      <div class="overflow-hidden hover:shadow-lg transition-shadow rounded-xl bg-white border">
-        <div class="h-48 bg-muted/50 flex items-center justify-center"><HomeIcon class="h-12 w-12 text-muted-foreground" /></div>
-        <div class="p-6">
-          <div class="flex justify-between items-start mb-2">
-            <div class="font-heading text-lg">Casa con Jardín</div>
-            <span class="inline-block px-2 py-1 rounded bg-secondary text-secondary-foreground text-xs font-semibold">$220,000</span>
-          </div>
-          <div class="flex items-center text-muted-foreground text-sm mb-2"><MapPinIcon class="h-4 w-4 mr-1" />Barrio Residencial</div>
-          <div class="flex justify-between text-sm text-muted-foreground mb-4"><span>4 hab.</span><span>3 baños</span><span>200m²</span></div>
-          <button class="w-full px-4 py-2 bg-primary text-white rounded font-semibold">Ver Detalles</button>
-        </div>
-      </div>
+          <CardHeader className="p-6 pb-0">
+            <div class="flex justify-between items-start mb-2">
+              <CardTitle className="font-heading text-lg">{property.title}</CardTitle>
+              <Badge className="inline-block px-2 py-1 rounded bg-secondary text-secondary-foreground text-xs font-semibold">{property.price}</Badge>
+            </div>
+            <CardDescription className="flex items-center text-muted-foreground text-sm mb-2">
+              <MapPinIcon class="h-4 w-4 mr-1" />{property.location}
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="p-6 pt-0">
+            <div class="flex justify-between text-sm text-muted-foreground mb-4">
+              <span>{property.beds} hab.</span>
+              <span>{property.baths} baños</span>
+              <span>{property.area}</span>
+            </div>
+            <Button className="w-full px-4 py-2 bg-primary text-white rounded font-semibold" text="Ver Detalles" />
+          </CardContent>
+        </Card>
+      ))}
+      {/* HASTA ACA PARA ARRIBA */}
     </div>
   </div>
 </section>
