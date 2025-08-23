@@ -2,6 +2,10 @@
 import PhoneIcon from '../components/icons/Phone.astro';
 import MailIcon from '../components/icons/Mail.astro';
 import MapPinIcon from '../components/icons/MapPin.astro';
+import Card from './ui/Card.astro';
+import CardHeader from './ui/CardHeader.astro';
+import CardTitle from './ui/CardTitle.astro';
+import CardContent from './ui/CardContent.astro';
 ---
 <section id="contacto" class="py-16">
   <div class="container mx-auto px-4">
@@ -11,22 +15,46 @@ import MapPinIcon from '../components/icons/MapPin.astro';
         <p class="text-lg text-muted-foreground">Estamos aquí para ayudarte en cada paso del camino</p>
       </div>
       <div class="grid md:grid-cols-2 gap-8">
-        <div class="border-0 shadow-sm rounded-xl bg-white p-6">
-          <div class="font-heading text-lg mb-4">Información de Contacto</div>
-          <div class="space-y-4">
-            <div class="flex items-center space-x-3"><PhoneIcon class="h-5 w-5 text-primary" /><span>+54 11 1234-5678</span></div>
-            <div class="flex items-center space-x-3"><MailIcon class="h-5 w-5 text-primary" /><span>info@trasel.com</span></div>
-            <div class="flex items-center space-x-3"><MapPinIcon class="h-5 w-5 text-primary" /><span>Av. Principal 123, Centro</span></div>
-          </div>
-        </div>
-        <div class="border-0 shadow-sm rounded-xl bg-white p-6">
-          <div class="font-heading text-lg mb-4">Horarios de Atención</div>
-          <div class="space-y-2">
-            <div class="flex justify-between"><span>Lunes a Viernes:</span><span>9:00 - 18:00</span></div>
-            <div class="flex justify-between"><span>Sábados:</span><span>9:00 - 13:00</span></div>
-            <div class="flex justify-between"><span>Domingos:</span><span>Cerrado</span></div>
-          </div>
-        </div>
+
+        <Card className="border-0 shadow-sm rounded-xl bg-white p-6">
+          <CardHeader>
+            <CardTitle className="font-heading text-lg mb-4">Información de Contacto</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div class="flex items-center space-x-3">
+              <PhoneIcon class="h-5 w-5 text-primary" />
+              <span>+54 11 1234-5678</span>
+            </div>
+            <div class="flex items-center space-x-3">
+              <MailIcon class="h-5 w-5 text-primary" />
+              <span>info@trasel.com</span>
+            </div>
+            <div class="flex items-center space-x-3">
+              <MapPinIcon class="h-5 w-5 text-primary" />
+              <span>Av. Principal 123, Centro</span>
+            </div>
+          </CardContent>
+        </Card>
+        <Card className="border-0 shadow-sm rounded-xl bg-white p-6">
+          <CardHeader>
+            <CardTitle className="font-heading text-lg mb-4">Horarios de Atención</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-2">
+            <div class="flex justify-between">
+              <span>Lunes a Viernes:</span>
+              <span>9:00 - 18:00</span>
+            </div>
+            <div class="flex justify-between">
+              <span>Sábados:</span>
+              <span>9:00 - 13:00</span>
+            </div>
+            <div class="flex justify-between">
+              <span>Domingos:</span>
+              <span>Cerrado</span>
+            </div>
+          </CardContent>
+        </Card>
+
       </div>
     </div>
   </div>
