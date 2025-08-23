@@ -1,0 +1,41 @@
+---
+
+import Badge from '../Badge.astro';
+import Button from '../Button.astro';
+import HomeIcon from '../icons/Home.astro';
+import MapPinIcon from '../icons/MapPin.astro';
+import { cn } from '../../lib/utils';
+
+export interface Props {
+  title: string;
+  price: string;
+  location: string;
+  beds: string;
+  baths: string;
+  area: string;
+  className?: string;
+}
+---
+<div class={cn("rounded-xl border bg-card text-card-foreground shadow", Astro.props.className)}>
+  <div class="h-48 bg-muted/50 flex items-center justify-center">
+    <HomeIcon class="h-12 w-12 text-muted-foreground" />
+  </div>
+  <div class="flex flex-col space-y-1.5 p-6">
+    <div class="flex justify-between items-start">
+      <h3 class="font-heading text-lg font-semibold leading-none tracking-tight">{Astro.props.title}</h3>
+      <Badge>{Astro.props.price}</Badge>
+    </div>
+    <p class="text-sm text-muted-foreground flex items-center">
+      <MapPinIcon class="h-4 w-4 mr-1" />
+      {Astro.props.location}
+    </p>
+  </div>
+  <div class="p-6 pt-0">
+    <div class="flex justify-between text-sm text-muted-foreground mb-4">
+      <span>{Astro.props.beds} hab.</span>
+      <span>{Astro.props.baths} baños</span>
+      <span>{Astro.props.area}</span>
+    </div>
+    <Button className="w-full" text="Ver Detalles" />
+  </div>
+</div>
