@@ -2,13 +2,11 @@
 import { cn } from '../../lib/utils';
 
 export interface Props {
-  icon?: any;
-  text: string;
-  className?: string;
+  text: string;
+  className?: string;
 }
 ---
-
 <button class={cn("inline-flex items-center justify-center whitespace-nowrap rounded-md text-lg font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground shadow hover:bg-primary/90 h-10 px-8", Astro.props.className)}>
-  {Astro.props.icon ? <Astro.props.icon class="h-4 w-4 mr-2" /> : null}
-  {Astro.props.text}
+  <slot name="icon" />
+  {Astro.props.text}
 </button>

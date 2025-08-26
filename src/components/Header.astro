@@ -19,7 +19,9 @@ import Button from './ui/Button.astro';
         <a href="#nosotros" class="text-foreground hover:text-primary transition-colors">Nosotros</a>
         <a href="#contacto" class="text-foreground hover:text-primary transition-colors">Contacto</a>
       </nav>
-  <Button className="hidden md:inline-flex" icon={PhoneIcon} text="Llamar Ahora" />
+      <Button className="hidden md:inline-flex" text="Llamar Ahora" >
+        <PhoneIcon class='h-5 w-5 mr-2'/>
+      </Button>
     </div>
   </div>
 </header>

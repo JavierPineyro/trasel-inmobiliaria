@@ -20,15 +20,16 @@ import ButtonSecondaryLg from "./ui/ButtonSecondaryLg.astro";
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <ButtonSecondaryLg
-          icon={<PhoneIcon className="h-5 w-5 mr-2" />}
           text="Llamar Ahora"
-          className="text-lg px-8 bg-white text-primary hover:bg-white/90"
-        />
+          className="text-lg px-8 bg-white text-primary hover:bg-white/90">
+          <PhoneIcon class="h-5 w-5 mr-2" />
+        </ButtonSecondaryLg>
         <ButtonOutline
           text="Enviar Consulta"
-          icon={<MailIcon className="h-5 w-5 mr-2" />}
           className="text-lg px-8 border-white text-white hover:bg-white hover:text-primary bg-transparent"
-        />
+          >
+          <MailIcon class="h-5 w-5 mr-2" />
+        </ButtonOutline>
       </div>
     </div>
   </div>
