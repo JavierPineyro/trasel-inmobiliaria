@@ -17,7 +17,6 @@ Este proyecto es una plataforma web moderna para la gestión y exhibición de pr
 
 - [Astro](https://astro.build/) — Framework web moderno y rápido.
 - [Tailwind CSS](https://tailwindcss.com/) — Utilidades CSS para un diseño ágil y responsivo.
-- [Stripe](https://stripe.com/) — Procesamiento de pagos seguro y flexible.
 - CMS Headless (próximamente).
 
 ## Enlaces útiles
