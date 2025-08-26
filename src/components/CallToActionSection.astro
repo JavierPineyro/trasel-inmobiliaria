@@ -1,0 +1,35 @@
+---
+import ButtonOutline from "./ui/ButtonOutline.astro";
+import PhoneIcon from "./icons/Phone.astro";
+import MailIcon from "./icons/Mail.astro";
+import ButtonSecondaryLg from "./ui/ButtonSecondaryLg.astro";
+
+---
+
+<section
+  class="py-16 bg-gradient-to-r from-primary to-primary/80 text-white"
+>
+  <div class="container mx-auto px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-heading font-black mb-4">
+        ¿Listo para encontrar tu hogar ideal?
+      </h2>
+      <p class="text-xl opacity-90 mb-8 max-w-2xl mx-auto">
+        No esperes más. Nuestro equipo está preparado para ayudarte a dar el
+        siguiente paso hacia tu futuro.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <ButtonSecondaryLg
+          icon={<PhoneIcon className="h-5 w-5 mr-2" />}
+          text="Llamar Ahora"
+          className="text-lg px-8 bg-white text-primary hover:bg-white/90"
+        />
+        <ButtonOutline
+          text="Enviar Consulta"
+          icon={<MailIcon className="h-5 w-5 mr-2" />}
+          className="text-lg px-8 border-white text-white hover:bg-white hover:text-primary bg-transparent"
+        />
+      </div>
+    </div>
+  </div>
+</section>

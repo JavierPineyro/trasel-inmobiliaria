@@ -1,60 +1,130 @@
 ---
-import PhoneIcon from '../components/icons/Phone.astro';
-import MailIcon from '../components/icons/Mail.astro';
-import MapPinIcon from '../components/icons/MapPin.astro';
-import Card from './ui/Card.astro';
-import CardHeader from './ui/CardHeader.astro';
-import CardTitle from './ui/CardTitle.astro';
-import CardContent from './ui/CardContent.astro';
+import Card from "./ui/Card.astro";
+import CardHeader from "./ui/CardHeader.astro";
+import CardTitle from "./ui/CardTitle.astro";
+import CardContent from "./ui/CardContent.astro";
+import MapPinIcon from "../components/icons/MapPin.astro";
+import MailIcon from "../components/icons/Mail.astro";
+import PhoneIcon from "../components/icons/Phone.astro";
 ---
-<section id="contacto" class="py-16">
+
+<section id="contacto" class="py-16 bg-white">
   <div class="container mx-auto px-4">
     <div class="max-w-4xl mx-auto">
       <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-heading font-black text-foreground mb-4">Hablemos de tu próximo hogar</h2>
-        <p class="text-lg text-muted-foreground">Estamos aquí para ayudarte en cada paso del camino</p>
+        <h2
+          class="text-3xl md:text-4xl font-heading font-black text-foreground mb-4"
+        >
+          Estamos aquí para ayudarte en cada paso del camino
+        </h2>
       </div>
       <div class="grid md:grid-cols-2 gap-8">
-
-        <Card className="border-0 shadow-sm rounded-xl bg-white p-6">
+        <Card
+          className="border-0 shadow-lg bg-gradient-to-br from-white to-slate-50 overflow-hidden"
+        >
           <CardHeader>
-            <CardTitle className="font-heading text-lg mb-4">Información de Contacto</CardTitle>
+            <CardTitle className="font-heading text-xl"
+              >Información de Contacto</CardTitle
+            >
+          </CardHeader>
+          <CardContent className="space-y-6">
+            <div
+              class="flex items-center space-x-4 p-4 bg-white rounded-xl shadow-sm border-l-4 border-primary"
+            >
+              <div class="bg-primary/10 p-2 rounded-lg">
+                <PhoneIcon className="h-5 w-5 text-primary" />
+              </div>
+              <div>
+                <p class="text-sm text-muted-foreground font-medium">
+                  Teléfono
+                </p>
+                <p class="font-heading font-bold text-foreground">
+                  +54 11 1234-5678
+                </p>
+              </div>
+            </div>
+            <div
+              class="flex items-center space-x-4 p-4 bg-white rounded-xl shadow-sm border-l-4 border-primary"
+            >
+              <div class="bg-primary/10 p-2 rounded-lg">
+                <MailIcon className="h-5 w-5 text-primary" />
+              </div>
+              <div>
+                <p class="text-sm text-muted-foreground font-medium">
+                  Email
+                </p>
+                <p class="font-heading font-bold text-foreground">
+                  info@trasel.com
+                </p>
+              </div>
+            </div>
+            <div
+              class="flex items-center space-x-4 p-4 bg-white rounded-xl shadow-sm border-l-4 border-primary"
+            >
+              <div class="bg-primary/10 p-2 rounded-lg">
+                <MapPinIcon className="h-5 w-5 text-primary" />
+              </div>
+              <div>
+                <p class="text-sm text-muted-foreground font-medium">
+                  Dirección
+                </p>
+                <p class="font-heading font-bold text-foreground">
+                  Av. Principal 123, Centro
+                </p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card
+          className="border-0 shadow-lg bg-gradient-to-br from-primary/5 to-white overflow-hidden"
+        >
+          <CardHeader>
+            <CardTitle className="font-heading text-xl"
+              >Horarios de Atención</CardTitle
+            >
           </CardHeader>
           <CardContent className="space-y-4">
-            <div class="flex items-center space-x-3">
-              <PhoneIcon className="h-5 w-5 text-primary" />
-              <span>+54 11 1234-5678</span>
+            <div class="bg-white rounded-xl p-4 shadow-sm">
+              <div class="flex justify-between items-center py-2">
+                <div class="flex items-center gap-2">
+                  <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                  <span class="font-medium text-foreground"
+                    >Lunes a Viernes</span
+                  >
+                </div>
+                <span class="font-heading font-bold text-primary"
+                  >9:00 - 18:00</span
+                >
+              </div>
+              <div class="flex justify-between items-center py-2">
+                <div class="flex items-center gap-2">
+                  <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                  <span class="font-medium text-foreground">Sábados</span>
+                </div>
+                <span class="font-heading font-bold text-primary"
+                  >9:00 - 13:00</span
+                >
+              </div>
+              <div class="flex justify-between items-center py-2">
+                <div class="flex items-center gap-2">
+                  <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                  <span class="font-medium text-foreground">Domingos</span>
+                </div>
+                <span class="font-heading font-bold text-muted-foreground"
+                  >Cerrado</span
+                >
+              </div>
             </div>
-            <div class="flex items-center space-x-3">
-              <MailIcon className="h-5 w-5 text-primary" />
-              <span>info@trasel.com</span>
-            </div>
-            <div class="flex items-center space-x-3">
-              <MapPinIcon className="h-5 w-5 text-primary" />
-              <span>Av. Principal 123, Centro</span>
+            <div
+              class="bg-primary/10 rounded-xl p-4 border border-primary/20"
+            >
+              <p class="text-sm text-primary font-medium text-center">
+                💡 También atendemos con cita previa fuera de horario
+              </p>
             </div>
           </CardContent>
         </Card>
-        <Card className="border-0 shadow-sm rounded-xl bg-white p-6">
-          <CardHeader>
-            <CardTitle className="font-heading text-lg mb-4">Horarios de Atención</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-2">
-            <div class="flex justify-between">
-              <span>Lunes a Viernes:</span>
-              <span>9:00 - 18:00</span>
-            </div>
-            <div class="flex justify-between">
-              <span>Sábados:</span>
-              <span>9:00 - 13:00</span>
-            </div>
-            <div class="flex justify-between">
-              <span>Domingos:</span>
-              <span>Cerrado</span>
-            </div>
-          </CardContent>
-        </Card>
-
       </div>
     </div>
   </div>

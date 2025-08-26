@@ -1,0 +1,77 @@
+---
+import Card from "./ui/Card.astro";
+import CardContent from "./ui/CardContent.astro";
+
+const equipo = [
+  {
+    name: "Roberto Träsel",
+    position: "Fundador y Director",
+    image: "/professional-businessman-portrait.png",
+  },
+  {
+    name: "María Träsel",
+    position: "Gerente de Ventas",
+    image: "/professional-businesswoman-portrait.png",
+  },
+  {
+    name: "Carlos Mendoza",
+    position: "Tasador Certificado",
+    image: "/professional-real-estate-appraiser.png",
+  },
+  {
+    name: "Ana Rodríguez",
+    position: "Asesora Comercial",
+    image: "/professional-real-estate-agent-woman.png",
+  },
+  {
+    name: "Luis García",
+    position: "Desarrollos Inmobiliarios",
+    image: "/professional-architect-man.png",
+  },
+  {
+    name: "Sofia Martín",
+    position: "Atención al Cliente",
+    image: "/professional-customer-service-woman.png",
+  },
+];
+---
+
+<section class="py-16 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2
+        class="text-3xl md:text-4xl font-heading font-black text-foreground mb-4"
+      >
+        Conoce a Nuestro Equipo
+      </h2>
+      <p class="text-lg text-muted-foreground">
+        Profesionales comprometidos con tu éxito
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+      {
+        equipo.map((member, index) => (
+          <Card
+            key={index}
+            className="border-0 shadow-sm hover:shadow-md transition-shadow overflow-hidden"
+          >
+            <div class="aspect-square overflow-hidden">
+              <img
+                src={member.image || "/placeholder.svg"}
+                alt={member.name}
+                class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <CardContent className="pt-6 text-center">
+              <h3 class="font-heading font-bold text-foreground mb-1">
+                {member.name}
+              </h3>
+              <p class="text-sm text-primary font-medium">{member.position}</p>
+            </CardContent>
+          </Card>
+        ))
+      }
+    </div>
+  </div>
+</section>
