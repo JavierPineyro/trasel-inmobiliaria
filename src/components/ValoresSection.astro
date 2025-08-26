@@ -1,90 +1,222 @@
 ---
-import AwardIcon from '../components/icons/Award.astro';
-import HomeIcon from '../components/icons/Home.astro';
-import UsersIcon from '../components/icons/Users.astro';
-import MapPinIcon from '../components/icons/MapPin.astro';
 import PhoneIcon from '../components/icons/Phone.astro';
+import AwardIcon from './icons/Award.astro';
+import HomeIcon from './icons/Home.astro';
+import UsersIcon from './icons/Users.astro';
+import MapPinIcon from './icons/MapPin.astro';
+import MailIcon from './icons/Mail.astro';
+import ButtonDefaultLg from './ui/ButtonDefaultLg.astro';
+import Button from './ui/Button.astro';
 ---
-<section class="py-16 bg-muted/30">
+
+<section class="py-16 bg-gradient-to-br from-slate-50 to-slate-100">
   <div class="container mx-auto px-4">
-    <div class="text-center mb-16">
-      <h2 class="text-3xl md:text-4xl font-heading font-black text-foreground mb-4">Lo que nos hace diferentes</h2>
-      <p class="text-lg text-muted-foreground max-w-2xl mx-auto">Nuestros valores familiares se reflejan en cada transacción</p>
-    </div>
-    <div class="max-w-6xl mx-auto">
-      <div class="grid lg:grid-cols-12 gap-8 items-center mb-16">
-        <div class="lg:col-span-7 order-2 lg:order-1">
-          <div class="bg-white rounded-2xl p-8 shadow-sm border-l-4 border-primary">
-            <div class="flex items-start gap-4">
-              <div class="bg-primary/10 p-3 rounded-xl shrink-0">
-                <AwardIcon class="h-6 w-6 text-primary" />
+          <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-heading font-black text-foreground mb-4">
+              Lo que nos hace diferentes
+            </h2>
+            <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Nuestros valores familiares se reflejan en cada transacción
+            </p>
+          </div>
+
+          {/* Primera historia - Confianza */}
+          <div class="max-w-6xl mx-auto">
+            <div class="grid lg:grid-cols-12 gap-8 items-center mb-16">
+              <div class="lg:col-span-7 order-2 lg:order-1">
+                <div class="bg-white rounded-2xl p-8 shadow-sm border-l-4 border-primary">
+                  <div class="flex items-start gap-4">
+                    <div class="bg-primary/10 p-3 rounded-xl shrink-0">
+                        <AwardIcon className="h-6 w-6 text-primary" />
+                    </div>
+                    <div>
+                      <h3 class="text-2xl font-heading font-bold text-foreground mb-3">
+                        20 años construyendo confianza
+                      </h3>
+                      <p class="text-muted-foreground leading-relaxed mb-4">
+                        Desde 2004, hemos ayudado a más de 500 familias a encontrar su hogar. No somos solo
+                        intermediarios, somos vecinos que entienden que comprar una casa es una de las decisiones más
+                        importantes de tu vida.
+                      </p>
+                      <div class="flex items-center gap-2 text-sm text-primary font-medium">
+                        <span class="w-2 h-2 bg-primary rounded-full"></span>
+                        Transparencia total en cada proceso
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div>
-                <h3 class="text-2xl font-heading font-bold text-foreground mb-3">20 años construyendo confianza</h3>
-                <p class="text-muted-foreground leading-relaxed mb-4">Desde 2004, hemos ayudado a más de 500 familias a encontrar su hogar. No somos solo intermediarios, somos vecinos que entienden que comprar una casa es una de las decisiones más importantes de tu vida.</p>
-                <div class="flex items-center gap-2 text-sm text-primary font-medium"><span class="w-2 h-2 bg-primary rounded-full"></span>Transparencia total en cada proceso</div>
+              <div class="lg:col-span-5 order-1 lg:order-2">
+                <div class="relative">
+                  <div class="bg-gradient-to-br from-primary/20 to-primary/5 rounded-2xl p-8 text-center">
+                    <div class="text-4xl font-heading font-black text-primary mb-2">500+</div>
+                    <div class="text-sm text-muted-foreground">Familias felices</div>
+                  </div>
+                  <div class="absolute -top-4 -right-4 bg-white rounded-full p-4 shadow-lg">
+                      <HomeIcon className="h-8 w-8 text-primary" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Segunda historia - Cercanía */}
+            <div class="grid lg:grid-cols-12 gap-8 items-center mb-16">
+              <div class="lg:col-span-5">
+                <div class="relative">
+                  <div class="bg-gradient-to-br from-primary/20 to-primary/5 rounded-2xl p-8 text-center">
+                    <div class="text-4xl font-heading font-black text-primary mb-2">100%</div>
+                    <div class="text-sm text-muted-foreground mb-4">Empresa Local</div>
+                    <div class="space-y-3 text-sm">
+                      <div class="flex items-center justify-center gap-2">
+                        <MapPinIcon className="h-4 w-4 text-primary" />
+                        <span class="text-muted-foreground">Conocemos cada barrio</span>
+                      </div>
+                      <div class="flex items-center justify-center gap-2">
+                          <PhoneIcon className="h-4 w-4 text-primary" />
+                        <span class="text-muted-foreground">Atención personalizada</span>
+                      </div>
+                      <div class="flex items-center justify-center gap-2">
+                          <AwardIcon className="h-4 w-4 text-primary" />
+                        <span class="text-muted-foreground">Compromiso con la comunidad</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="absolute -top-4 -right-4 bg-white rounded-full p-4 shadow-lg">
+                      <UsersIcon className="h-8 w-8 text-primary" />
+                  </div>
+                </div>
+              </div>
+              <div class="lg:col-span-7">
+                <div class="bg-white rounded-2xl p-8 shadow-sm border-r-4 border-primary">
+                  <h3 class="text-2xl font-heading font-bold text-foreground mb-3">Somos parte de tu comunidad</h3>
+                  <p class="text-muted-foreground leading-relaxed mb-6">
+                    No somos una franquicia ni una empresa multinacional. Somos la familia Träsel, nacidos y criados
+                    aquí. Conocemos la historia de cada esquina, el mejor colegio para tus hijos y dónde encontrar el
+                    mejor pan los domingos.
+                  </p>
+                  <ButtonDefaultLg className="bg-primary hover:bg-primary/90" icon={PhoneIcon} text="Contactanos Ahora" />
+                </div>
+              </div>
+            </div>
+
+                       {/* Tercera historia - Profesionalismo */}
+            <div class="bg-gradient-to-br from-white to-slate-50 rounded-2xl p-8 shadow-sm overflow-hidden relative">
+              <div class="grid lg:grid-cols-2 gap-12 items-center">
+                {/* Left side - Visual showcase */}
+                <div class="space-y-6">
+                  <div class="relative">
+                    <img
+                      src="/modern-family-house-exterior.png"
+                      alt="Venta de propiedades"
+                      class="w-full h-48 object-cover rounded-xl shadow-md"
+                    />
+                    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/80 rounded-xl"></div>
+                    <div class="absolute bottom-4 left-4 text-white">
+                      <div class="flex items-center gap-2 mb-1">
+                          <HomeIcon className="h-5 w-5" />
+                        <span class="font-heading font-bold">Venta de Propiedades</span>
+                      </div>
+                      <p class="text-sm opacity-90">Casas, departamentos y terrenos</p>
+                    </div>
+                  </div>
+
+                  <div class="grid grid-cols-2 gap-4">
+                    <div class="relative">
+                      <img
+                        src="/modern-apartment-building.png"
+                        alt="Desarrollos inmobiliarios"
+                        class="w-full h-32 object-cover rounded-lg shadow-sm"
+                      />
+                      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/80 rounded-lg"></div>
+                      <div class="absolute bottom-2 left-2 text-white">
+                        <div class="flex items-center gap-1">
+                          <AwardIcon className="h-4 w-4" />
+                          <span class="text-xs font-medium">Desarrollos</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="relative">
+                      <img
+                        src="/professional-real-estate-appraiser.png"
+                        alt="Tasaciones profesionales"
+                        class="w-full h-32 object-cover rounded-lg shadow-sm"
+                      />
+                      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/80 rounded-lg"></div>
+                      <div class="absolute bottom-2 left-2 text-white">
+                        <div class="flex items-center gap-1">
+                          <UsersIcon className="h-4 w-4" />
+                          <span class="text-xs font-medium">Tasaciones</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Right side - Content and CTA */}
+                <div class="space-y-6">
+                  <div>
+                    <h3 class="text-2xl font-heading font-black text-foreground mb-4">
+                      Servicios que transforman sueños en realidad
+                    </h3>
+                    <div class="space-y-4">
+                      <div class="flex items-start gap-3">
+                        <div class="bg-primary/10 p-2 rounded-lg shrink-0 mt-1">
+                          <HomeIcon className="h-4 w-4 text-primary" />
+                        </div>
+                        <div>
+                          <h4 class="font-heading font-bold text-foreground mb-1">Venta de Propiedades</h4>
+                          <p class="text-sm text-muted-foreground">
+                            Desde tu primera casa hasta inversiones comerciales, te acompañamos con asesoría
+                            personalizada
+                          </p>
+                        </div>
+                      </div>
+
+                      <div class="flex items-start gap-3">
+                        <div class="bg-primary/10 p-2 rounded-lg shrink-0 mt-1">
+                            <AwardIcon className="h-4 w-4 text-primary" />
+                        </div>
+                        <div>
+                          <h4 class="font-heading font-bold text-foreground mb-1">Desarrollos Inmobiliarios</h4>
+                          <p class="text-sm text-muted-foreground">
+                            Proyectos integrales desde la planificación hasta la entrega de llaves
+                          </p>
+                        </div>
+                      </div>
+
+                      <div class="flex items-start gap-3">
+                        <div class="bg-primary/10 p-2 rounded-lg shrink-0 mt-1">
+                            <UsersIcon className="h-4 w-4 text-primary" />
+                        </div>
+                        <div>
+                          <h4 class="font-heading font-bold text-foreground mb-1">Tasaciones Certificadas</h4>
+                          <p class="text-sm text-muted-foreground">
+                            Valuaciones precisas por profesionales matriculados para todas tus necesidades
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="bg-primary/5 rounded-xl p-6 border-l-4 border-primary">
+                    <p class="text-primary font-heading font-bold text-lg mb-2">
+                      ¿Buscas un terreno con facilidad de pago?
+                    </p>
+                    <p class="text-muted-foreground text-sm mb-4">
+                      Tenemos opciones especiales con planes de financiamiento adaptados a tu presupuesto
+                    </p>
+                    <Button className="bg-primary hover:bg-primary/90" text='Consultar Opciones' icon={<MailIcon className="h-4 w-4 mr-2" />}>
+                    </Button>
+                  </div>
+                </div>
+              </div>
+
+              {/* Decorative element */}
+              <div class="absolute top-4 right-4 opacity-10">
+                  <HomeIcon className="h-24 w-24 text-primary" />
               </div>
             </div>
           </div>
         </div>
-        <div class="lg:col-span-5 order-1 lg:order-2">
-          <div class="relative">
-            <div class="bg-gradient-to-br from-primary/20 to-primary/5 rounded-2xl p-8 text-center">
-              <div class="text-4xl font-heading font-black text-primary mb-2">500+</div>
-              <div class="text-sm text-muted-foreground">Familias felices</div>
-            </div>
-            <div class="absolute -top-4 -right-4 bg-white rounded-full p-4 shadow-lg">
-              <HomeIcon class="h-8 w-8 text-primary" />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="grid lg:grid-cols-12 gap-8 items-center mb-16">
-        <div class="lg:col-span-5">
-          <div class="bg-white rounded-2xl p-6 shadow-sm">
-            <div class="text-center mb-4">
-              <UsersIcon class="h-12 w-12 text-primary mx-auto mb-3" />
-              <div class="text-lg font-heading font-bold text-foreground">Empresa 100% Local</div>
-            </div>
-            <div class="space-y-3 text-sm">
-              <div class="flex items-center gap-2"><MapPinIcon class="h-4 w-4 text-primary" /><span class="text-muted-foreground">Conocemos cada barrio</span></div>
-              <div class="flex items-center gap-2"><PhoneIcon class="h-4 w-4 text-primary" /><span class="text-muted-foreground">Atención personalizada</span></div>
-              <div class="flex items-center gap-2"><AwardIcon class="h-4 w-4 text-primary" /><span class="text-muted-foreground">Compromiso con la comunidad</span></div>
-            </div>
-          </div>
-        </div>
-        <div class="lg:col-span-7">
-          <div class="bg-white rounded-2xl p-8 shadow-sm border-r-4 border-primary">
-            <h3 class="text-2xl font-heading font-bold text-foreground mb-3">Somos parte de tu comunidad</h3>
-            <p class="text-muted-foreground leading-relaxed mb-4">No somos una franquicia ni una empresa multinacional. Somos la familia Hartmann, nacidos y criados aquí. Conocemos la historia de cada esquina, el mejor colegio para tus hijos y dónde encontrar el mejor pan los domingos.</p>
-            <blockquote class="border-l-3 border-primary/30 pl-4 italic text-muted-foreground">"Cuando vendes tu casa con nosotros, no eres un número más. Eres el vecino de la esquina que necesita nuestra ayuda."</blockquote>
-            <div class="mt-3 text-sm font-medium text-primary">- Roberto Hartmann, Fundador</div>
-          </div>
-        </div>
-      </div>
-      <div class="bg-white rounded-2xl p-8 shadow-sm">
-        <div class="grid lg:grid-cols-3 gap-8 items-start">
-          <div class="text-center">
-            <div class="bg-primary/10 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4"><HomeIcon class="h-8 w-8 text-primary" /></div>
-            <h4 class="font-heading font-bold text-foreground mb-2">Venta de Propiedades</h4>
-            <p class="text-sm text-muted-foreground">Casas, departamentos y terrenos con la mejor asesoría personalizada</p>
-          </div>
-          <div class="text-center">
-            <div class="bg-primary/10 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4"><AwardIcon class="h-8 w-8 text-primary" /></div>
-            <h4 class="font-heading font-bold text-foreground mb-2">Desarrollos Inmobiliarios</h4>
-            <p class="text-sm text-muted-foreground">Proyectos integrales desde la planificación hasta la entrega final</p>
-          </div>
-          <div class="text-center">
-            <div class="bg-primary/10 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4"><UsersIcon class="h-8 w-8 text-primary" /></div>
-            <h4 class="font-heading font-bold text-foreground mb-2">Tasaciones</h4>
-            <p class="text-sm text-muted-foreground">Valuaciones precisas y certificadas por profesionales matriculados</p>
-          </div>
-        </div>
-        <div class="mt-8 pt-6 border-t border-muted">
-          <p class="text-center text-primary font-medium mb-2">¿Buscas un terreno con facilidad de pago?</p>
-          <p class="text-center text-muted-foreground italic">"El profesionalismo no está reñido con la calidez humana. Creemos que se puede ser serio en el trabajo y cálido en el trato."</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>

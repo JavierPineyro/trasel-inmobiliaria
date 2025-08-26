@@ -1,6 +1,5 @@
 ---
-import HomeIcon from "../components/icons/Home.astro";
-import MapPinIcon from "../components/icons/MapPin.astro";
+
 import Card from "./ui/Card.astro";
 import CardHeader from "./ui/CardHeader.astro";
 import CardTitle from "./ui/CardTitle.astro";
@@ -8,6 +7,7 @@ import CardDescription from "./ui/CardDescription.astro";
 import CardContent from "./ui/CardContent.astro";
 import Button from "./ui/Button.astro";
 import Badge from "./ui/Badge.astro";
+import MapPin from "./icons/MapPin.astro";
 
 const propiedades = [
   {
@@ -17,6 +17,7 @@ const propiedades = [
     beds: 3,
     baths: 2,
     area: "150m²",
+    image: "/modern-family-house-exterior.png",
   },
   {
     title: "Departamento Moderno",
@@ -25,6 +26,7 @@ const propiedades = [
     beds: 2,
     baths: 1,
     area: "80m²",
+    image: "/modern-apartment-building.png",
   },
   {
     title: "Casa con Jardín",
@@ -33,51 +35,66 @@ const propiedades = [
     beds: 4,
     baths: 3,
     area: "200m²",
+    image: "/house-with-garden-and-yard.png",
+  },
+  {
+    title: "Terreno Comercial",
+    price: "$150,000",
+    location: "Zona Comercial",
+    beds: 0,
+    baths: 0,
+    area: "500m²",
+    image: "/commercial-land-plot.png",
   },
 ];
 ---
 
-<section id="propiedades" class="py-16">
-  <div class="container mx-auto px-4">
-    <div class="text-center mb-12">
-      <h2
-        class="text-3xl md:text-4xl font-heading font-black text-foreground mb-4"
-      >
-        Propiedades Destacadas
-      </h2>
-      <p class="text-lg text-muted-foreground">
-        Selección especial de nuestras mejores opciones
-      </p>
-    </div>
-
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-      {/*  DESDE ACA PARA ABAJO */}
-      {propiedades.map((property) => (
-        <Card className="overflow-hidden hover:shadow-lg transition-shadow rounded-xl bg-white border">
-          <div class="h-48 bg-muted/50 flex items-center justify-center">
-            <HomeIcon class="h-12 w-12 text-muted-foreground" />
+    <section id="propiedades" class="py-16 bg-primary text-white">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-heading font-black mb-4">Propiedades Destacadas</h2>
+            <p class="text-lg opacity-90">Selección especial de nuestras mejores opciones</p>
           </div>
-          <CardHeader className="p-6 pb-0">
-            <div class="flex justify-between items-start mb-2">
-              <CardTitle className="font-heading text-lg">{property.title}</CardTitle>
-              <Badge className="inline-block px-2 py-1 rounded bg-secondary text-secondary-foreground text-xs font-semibold">{property.price}</Badge>
+
+          <div class="relative max-w-6xl mx-auto">
+            <div class="overflow-hidden">
+              <div class="flex gap-6 transition-transform duration-300" style={{ transform: "translateX(0%)" }}>
+                {propiedades.map((property, index) => (
+                  <Card
+                    key={index}
+                    class="flex-none w-80 bg-white text-foreground overflow-hidden hover:shadow-lg transition-shadow"
+                  >
+                    <div class="h-48 overflow-hidden">
+                      <img
+                        src={property.image || "/placeholder.svg"}
+                        alt={property.title}
+                        class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                    <CardHeader>
+                      <div class="flex justify-between items-start">
+                        <CardTitle className="font-heading text-lg">{property.title}</CardTitle>
+                        <Badge variant="secondary" class="bg-primary text-white">
+                          {property.price}
+                        </Badge>
+                      </div>
+                      <CardDescription className="flex items-center">
+                        <MapPin className="h-4 w-4 mr-1" />
+                        {property.location}
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div class="flex justify-between text-sm text-muted-foreground mb-4">
+                        <span>{property.beds > 0 ? `${property.beds} hab.` : "Terreno"}</span>
+                        <span>{property.baths > 0 ? `${property.baths} baños` : ""}</span>
+                        <span>{property.area}</span>
+                      </div>
+                      <Button text="Ver Detalles" className="w-full bg-primary hover:bg-primary/90" />
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
             </div>
-            <CardDescription className="flex items-center text-muted-foreground text-sm mb-2">
-              <MapPinIcon class="h-4 w-4 mr-1" />{property.location}
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="p-6 pt-0">
-            <div class="flex justify-between text-sm text-muted-foreground mb-4">
-              <span>{property.beds} hab.</span>
-              <span>{property.baths} baños</span>
-              <span>{property.area}</span>
-            </div>
-            <Button className="w-full px-4 py-2 bg-primary text-white rounded font-semibold" text="Ver Detalles" />
-          </CardContent>
-        </Card>
-      ))}
-      {/* HASTA ACA PARA ARRIBA */}
-    </div>
-  </div>
-</section>
+          </div>
+        </div>
+      </section>
